@@ -1,5 +1,6 @@
-package com.xl.sericefeign;
+package com.xl.sericefeign.web;
 
+import com.xl.sericefeign.clients.IOrderServiceWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -9,11 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class OrderServiceController {
 
     @Autowired
-    IOrderServiceWrapper orderServiceWrapper;
+    IOrderServiceWrapper iOrderServiceWrapper;
 
     @GetMapping(value = "/hi")
     public String sayHi(@RequestParam String name) {
-        return orderServiceWrapper.sayHiFromClientOne( name );
+        return iOrderServiceWrapper.sayHiFromClientOne( name );
     }
 
 
