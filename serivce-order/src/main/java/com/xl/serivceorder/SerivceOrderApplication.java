@@ -19,15 +19,15 @@ public class SerivceOrderApplication {
     }
 
 
-    @Value("${foo}")
-    String foo;
+//    @Value("${foo}")
+//    String foo;
 
     @Value("${server.port}")
     String port;
 
     @RequestMapping("/hi")
     public String home(@RequestParam(value = "name", defaultValue = "forezp") String name) {
-        return "hi " + name + " ,i am from port:" + port ;//+",config ";
+        return "hi " + name + " ,i am from port:" + port;// +",config " + foo;
     }
 
 }
