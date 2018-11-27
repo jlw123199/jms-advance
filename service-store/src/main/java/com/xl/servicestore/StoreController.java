@@ -1,24 +1,27 @@
 package com.xl.servicestore;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
+@Service
 @RestController
-@RequestMapping(value ="/stroe/")
+@RequestMapping(value = "/stroe/")
 public class StoreController {
     @RequestMapping(value = "/ping")
-    public String ping(){
+    public String ping() {
         return "Pong - Store Controller";
     }
 
     @Autowired
-    RestTemplate restTemplate;
+    OrderServiceConsumer orderServiceConsumer;
+
 
     @RequestMapping(value = "/order")
-    public String order(String name) {
-        return restTemplate.getForObject("http://ORDER-SERVICE/hi?name=" + name, String.class);
+    public String hi(@RequestParam String name) {
+        return orderServiceConsumer.hiService( name );
     }
 
 }
