@@ -11,6 +11,12 @@ public class SerivceOrderApplicationTests {
 
     @Test
     public void contextLoads() {
+
+        System.out.println( FunctionInterfaceUtility.UUID.generate());
+        System.out.println( FunctionInterfaceUtility.UUID.generate());
+
+        System.out.println( FunctionInterfaceUtility.AGE.generate());
+
     }
 
 }

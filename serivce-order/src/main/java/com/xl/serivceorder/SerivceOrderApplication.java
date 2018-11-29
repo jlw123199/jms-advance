@@ -27,7 +27,6 @@ public class SerivceOrderApplication {
 
     @RequestMapping("/hi")
     public String home(@RequestParam(value = "name", defaultValue = "forezp") String name) {
-        return "hi " + name + " ,i am from port:" + port;// +",config " + foo;
+        return "hi " + name + " ,I am - from port:" + port;// +",config " + foo;
     }
-
 }
