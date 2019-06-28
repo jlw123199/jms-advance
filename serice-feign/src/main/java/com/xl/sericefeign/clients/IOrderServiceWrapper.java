@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(value ="order-service",fallback = OrderServiceFusing.class )
-public interface IOrderServiceWrapper {
+@FeignClient(value ="user-service",fallback = OrderServiceFusing.class )
+public interface IUserServiceWrapper {
 
     @RequestMapping(value = "/hi",method = RequestMethod.GET)
     String sayHiFromClientOne(@RequestParam(value = "name") String name);
