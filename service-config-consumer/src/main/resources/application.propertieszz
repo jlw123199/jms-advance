@@ -1,0 +1,7 @@
+
+#server.port=2881
+
+#spring.application.name=hotel
+#spring.profiles.active=dev
+#spring.cloud.config.url=http://localhost:118
+#
